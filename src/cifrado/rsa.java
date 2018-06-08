@@ -1,17 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package cifrado;
 
 import java.math.BigInteger;
 import java.util.Random;
 
-/**
- *
- * @author mrodriguez
- */
 public class rsa {
     final int BITLENGTH = 1024;
     int tamPrimo;
@@ -40,7 +31,7 @@ public class rsa {
         // Elegimos un e coprimo de y menor que n
         do e = new BigInteger(2 * tamPrimo, new Random());
             while((e.compareTo(totient) != -1) || (e.gcd(totient).compareTo(BigInteger.valueOf(1)) != 0));
-        // d = e^1 mod totient
+        // d = e**1 mod totient
         d = e.modInverse(totient);
     }
     
@@ -49,7 +40,7 @@ public class rsa {
     }
     
     /**
-     * Encripta el texto usando la clave p�blica
+     * Encripta el texto usando la clave pública
      *
      * @param   mensaje     Ristra que contiene el mensaje a encriptar
      * @return   El mensaje cifrado como un vector de BigIntegers
@@ -77,7 +68,7 @@ public class rsa {
     /**
      * Desencripta el texto cifrado usando la clave privada
      *
-     * @param   encriptado       Array de objetos BigInteger que contiene el texto cifrado que ser� desencriptado
+     * @param   encriptado       Array de objetos BigInteger que contiene el texto cifrado que será desencriptado
      * @return  The decrypted plaintext
      */
     public String desencripta(BigInteger[] encriptado) {

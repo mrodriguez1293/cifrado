@@ -50,6 +50,11 @@ public class rsaFrame extends javax.swing.JFrame {
         informacionTextArea = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Generador de Clave RSA");
+        setBackground(new java.awt.Color(0, 0, 0));
+        setResizable(false);
+
+        clavesTabPanel.setEnabled(false);
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Opción"));
 
@@ -195,6 +200,7 @@ public class rsaFrame extends javax.swing.JFrame {
             desencriptarRadioButton.setEnabled(true);
             clavesTabPanel.setEnabled(true);
             vamosButton.setEnabled(true);
+            jPanel4.setEnabled(true);
 
             encriptarRadioButton.setSelected(true);
         } catch (Exception e) {
